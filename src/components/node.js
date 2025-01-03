@@ -1,7 +1,8 @@
 import React from "react";
 import { Handle, Position } from 'reactflow';
-import file from '../utils/images/file.png';
 import { useState } from "react";
+import {ReactComponent as Icon} from '../utils/images/icon.svg';
+
 const Node = ({title, inputs, outputs, content, style})=>{
     const[isVisible, setIsVisible] = useState(true);
     const handleClose =()=>{
@@ -9,14 +10,13 @@ const Node = ({title, inputs, outputs, content, style})=>{
     }
     return(
         isVisible &&(
-        <div className="node-components">
-            {/* style={{width: 200, height: 80, border: '1px solid black'}}> */}
-            <div className="node-header">
-                <img src={file}/>
-                <p>{title}</p>
+        <div className="node text-white">
+            <div className="node-header p-2 border-top-12">
+                <Icon width="30" height="20"/>
+                <p className="m-0">{title}</p>
                 <button onClick={handleClose} className="node-close">X</button>
             </div>
-            <div className="node-body">{content}</div>
+            <div className="node-body p-2">{content}</div>
             {inputs.map((input,index)=>(
                 <Handle
                 key = {index}
