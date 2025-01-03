@@ -1,17 +1,20 @@
 import React from "react";
 import { Handle, Position } from 'reactflow';
 import file from '../utils/images/file.png';
-
+import { useState } from "react";
 const Node = ({title, inputs, outputs, content, style})=>{
-    console.log("bhai main Node mein hu", content)
-
+    const[isVisible, setIsVisible] = useState(true);
+    const handleClose =()=>{
+        setIsVisible(false);
+    }
     return(
+        isVisible &&(
         <div className="node-components">
             {/* style={{width: 200, height: 80, border: '1px solid black'}}> */}
             <div className="node-header">
                 <img src={file}/>
                 <p>{title}</p>
-                <button className="node-close">X</button>
+                <button onClick={handleClose} className="node-close">X</button>
             </div>
             <div className="node-body">{content}</div>
             {inputs.map((input,index)=>(
@@ -38,5 +41,6 @@ const Node = ({title, inputs, outputs, content, style})=>{
 
         </div>
     )
+);
 }
 export default Node;

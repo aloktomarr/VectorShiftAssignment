@@ -4,7 +4,6 @@ import nodeConfig from "../utils/nodeConfig";
 
 export const InputNode =({data})=>{
     const config = nodeConfig.inputNode;
-    console.log("bhai inputNode mein hu",data)
     return (
         <Node
         title ={config.title}

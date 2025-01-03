@@ -4,6 +4,7 @@ import nodeConfig from "../utils/nodeConfig.js";
 
 export const TextNode =({data})=>{
     const config = nodeConfig.textNode;
+    
     return (
         <Node
         title ={config.title}

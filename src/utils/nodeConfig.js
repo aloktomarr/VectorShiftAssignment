@@ -93,10 +93,15 @@ const nodeConfig = {
             { id: 'true', position: 'right', style: {top:'25%'} },
             { id: 'false', position: 'right', style: {top:'75%'} }
         ],
-        content: (data) => <div>
-            <label>Condition</label>
-            <input type="text" value={data?.condition} placeholder="Enter condition"/>
-        </div>,
+        content: (data) => <div className="container">
+        <div className="node-textheader">
+            <p className="node-textlabel">Condition</p>
+        </div>
+        <select className="node-textinput mb-4" value={data?.outputType}>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+    </div>,
         styles: { backgroundColor: '#FFE4C4' }
     }
 
