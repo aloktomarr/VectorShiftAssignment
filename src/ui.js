@@ -13,9 +13,11 @@ import { TextNode } from './nodes/textNode';
 import nodeConfig from './utils/nodeConfig';
 import 'reactflow/dist/style.css';
 import { DecisionNode } from './nodes/DecisionNode';
+import {DelayNode} from './nodes/DelayNode';
+import {APICallNode} from './nodes/APICallNode';
+import { MergeNode } from './nodes/MergeNode';
+import { ValidationNode } from './nodes/ValidationNode';
 
-const nodeconftext = nodeConfig.textNode;
-// console.log("nodeconftext......",nodeconftext.content(data))
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
 const nodeTypes = {
@@ -24,6 +26,10 @@ const nodeTypes = {
   customOutput: OutputNode,
   text: TextNode,
   decisionNode: DecisionNode,
+  delayNode: DelayNode,
+  apiCallNode: APICallNode,
+  mergeNode: MergeNode,
+  validationNode: ValidationNode
 };
 
 const selector = (state) => ({
@@ -62,8 +68,6 @@ export const PipelineUI = () => {
           if (event?.dataTransfer?.getData('application/reactflow')) {
             const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
             const type = appData?.nodeType;
-      
-            // check if the dropped element is valid
             if (typeof type === 'undefined' || !type) {
               return;
             }

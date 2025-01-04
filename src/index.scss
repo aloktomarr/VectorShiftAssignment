@@ -1,71 +1,106 @@
-.node-components {
+.node {
   opacity: 1;
   font-size: 13.3px;
-  color: white;
   font-family: sans-serif;
-  width: 250px;
-  padding: 20px;
+  width: 15vw;
   .node-header {
-    background-color: #430b8a;
-    padding: 8px;
-    border-radius: 12px 12px 0px 0px;
+    background-color: #4F5D75;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
     display: flex;
-    img{
-        width: 10%;;
-    }
-    p {
-        margin: 0px;
+    img {
+      width: 8%;
     }
     .node-close {
       margin-left: auto;
       float: right;
-      background: transparent;
-      color: white;
-      border: none;
-      height: fit-content;
-      cursor: pointer;
     }
   }
   .node-body {
     border-radius: 0px 0px 12px 12px;
-    min-height: 100px;
-    background-color: #0c0869;
+    background-color: #323B5F; 
     .container {
-      width: 70%;
-      margin: 0 auto;
-      padding: 10px;
-      .node-textheader {
-        display: flex;
-        .node-textlabel {
-          padding-bottom: 10px;
-          margin: 0px;
+      max-width: 100%;
+      margin: 0;
+      padding: 0px;
+      .node-field {
+        .body-header {
+          padding: 0px;
+          .body-label {
+            margin: 0px;
+          }
+          .body-addvariable {
+            margin-left: auto;
+            cursor: pointer;
+          }
         }
-        .node-addvariable {
-          margin-left: auto;
-          float: right;
-          background: transparent;
-          color: white;
-          border: none;
-          height: fit-content;
+        .body-textinput {
+          width: 100%;
+          field-sizing: content;
+          overflow: hidden;
           cursor: pointer;
         }
-      }
-      .node-textinput {
-        width: 90%;
-        border-radius: 12px;
-        padding: 4px;
-        field-sizing: content;
-        overflow: hidden;
-        cursor: pointer;
       }
     }
   }
 }
 
+//resuable styling
+.border-top-12 {
+  border-radius: 12px 12px 0px 0px;
+}
 
-.mb-4{
-    margin-bottom: 8px;
+.border-bottom-12 {
+  border-radius: 0px 0px 12px 12px;
+}
+
+.border-12 {
+  border-radius: 12px;
+}
+
+button {
+  background: transparent;
+  color: white;
+  border: none;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.btn-go {
+  background-color: lightcyan;
+  color: black;
+}
+
+.app-container {
+  height: 100vh;
+  background-image: url('./utils/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: black;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: black;
+}
+
+.react-flow__handle{
+  position: absolute;
+}
+
+.react-flow__handle::before {
+  content: var(--variable-name,'');
+  position: absolute;
+  right: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  margin-right: 8px;
 }
