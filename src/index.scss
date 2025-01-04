@@ -1,11 +1,12 @@
+@import "./styles/variables";
+
 .node {
   opacity: 1;
   font-size: 13.3px;
   font-family: sans-serif;
   width: 15vw;
   .node-header {
-    background-color: #4F5D75;
-    text-align: center;
+    background-color: $node-color;
     font-size: 14px;
     font-weight: bold;
     display: flex;
@@ -18,8 +19,7 @@
     }
   }
   .node-body {
-    border-radius: 0px 0px 12px 12px;
-    background-color: #323B5F; 
+    background-color: $node-body-color; 
     .container {
       max-width: 100%;
       margin: 0;
@@ -40,6 +40,11 @@
           field-sizing: content;
           overflow: hidden;
           cursor: pointer;
+          line-height: normal;
+        }
+
+        .body-checkbox {
+
         }
       }
     }
@@ -68,13 +73,13 @@ button {
 }
 
 .btn-go {
-  background-color: lightcyan;
-  color: black;
+  background-color: #eb701e;
+  color: $node-body-color;
 }
 
 .app-container {
   height: 100vh;
-  background-image: url('./utils/images/bg.jpg');
+  background-image: url('./utils/images/background.jpg');
   background-size: cover;
   background-position: center;
 }

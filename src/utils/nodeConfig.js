@@ -93,7 +93,7 @@ const nodeConfig = {
                 </div>
 
                 <div className="node-field">
-                    <input type="checkbox" className="body-textinput mt-2" />Use Personal API Key
+                    <input type="checkbox" className="body-checkbox mt-2" />Use Personal API Key
                 </div>
             </div>,
         styles: { backgroundColor: 'black' }
@@ -167,12 +167,12 @@ const nodeConfig = {
         styles: { backgroundColor: '#FFE4C4' }
     },
 
-    validationNode : {
+    validationNode: {
         title: 'Validation',
         inputs: [{ id: 'dataIn', position: 'left', style: { top: '50' } }],
         outputs: [
-            { id: 'valid', position: 'right', style: {top: '25%'} },
-            { id: 'invalid', position: 'right', style: {top:'75%'}}
+            { id: 'valid', position: 'right', style: { top: '25%' } },
+            { id: 'invalid', position: 'right', style: { top: '75%' } }
         ],
         content: (data) => <div className="container">
             <div className="node-field">
@@ -185,14 +185,14 @@ const nodeConfig = {
         styles: { backgroundColor: '#FFE4C4' }
     },
 
-    mergeNode : {
+    mergeNode: {
         title: 'Merge',
         inputs: [
             { id: 'input1', position: 'left', style: { top: '25%' } },
             { id: 'input2', position: 'left', style: { top: '75%' } }
         ],
         outputs: [
-            { id: 'output', position: 'right'}
+            { id: 'output', position: 'right' }
         ],
         content: (data) => <div className="container">
             <div className="node-field">

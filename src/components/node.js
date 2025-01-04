@@ -16,7 +16,7 @@ const Node = ({title, inputs, outputs, content, style})=>{
                 <p className="m-0">{title}</p>
                 <button onClick={handleClose} className="node-close">X</button>
             </div>
-            <div className="node-body p-2">{content}</div>
+            <div className="node-body border-bottom-12 p-2">{content}</div>
             {inputs.map((input,index)=>(
                 <Handle
                 key = {index}
