@@ -61,18 +61,20 @@ export const TextNode = ({ data }) => {
             inputs={inputs}
             outputs={config.outputs}
             content={<div className="container">
-                <div className="node-textheader">
-                    <p className="node-textlabel">Text</p>
-                    <button onClick={handleAddVariable} className="node-addvariable">&#123; &#125;</button>
+              <div className="node-field">
+                <div className="body-header d-flex">
+                    <p className="body-label">Text</p>
+                    <button onClick={handleAddVariable} className="body-addvariable">&#123; &#125;</button>
                 </div>
                 <textarea
-                    className="node-textinput"
+                    className="body-textinput border-12"
                     type="text"
                     ref={textareaRef}
                     value={text}
                     onChange={handleTextChange}
-                    placeholder="input"
+                    placeholder="Input"
                 />
+                </div>
             </div>}
             styles={config.styles}
         />
