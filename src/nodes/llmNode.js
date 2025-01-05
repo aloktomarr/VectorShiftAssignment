@@ -3,7 +3,6 @@ import Node from "../components/node";
 import nodeConfig from "../utils/nodeConfig.js";
 
 export const LLMNode = ({ data }) => {
-    console.log("lllllmmmm hu............", data);
     const config = nodeConfig.llmNode;
     return (
             <Node

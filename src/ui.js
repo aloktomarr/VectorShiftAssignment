@@ -1,8 +1,4 @@
-// ui.js
-// Displays the drag-and-drop UI
-// --------------------------------------------------
-
-import { useState, useRef, useCallback } from 'react';
+ import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
 import { shallow } from 'zustand/shallow';
@@ -10,7 +6,6 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
-import nodeConfig from './utils/nodeConfig';
 import 'reactflow/dist/style.css';
 import { DecisionNode } from './nodes/DecisionNode';
 import {DelayNode} from './nodes/DelayNode';
@@ -29,7 +24,7 @@ const nodeTypes = {
   delayNode: DelayNode,
   apiCallNode: APICallNode,
   mergeNode: MergeNode,
-  validationNode: ValidationNode
+  validationNode: ValidationNode,
 };
 
 const selector = (state) => ({
