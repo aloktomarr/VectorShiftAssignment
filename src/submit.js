@@ -22,10 +22,9 @@ export const SubmitButton = () => {
                     body: JSON.stringify({ nodes, edges }),
                 },
             );
-            console.log(response);
             if (!response.ok) {
                 throw new Error(
-                    "Failed to parse pipeline but inside try block",
+                    "Failed to parse pipeline",
                 );
             }
 
@@ -35,7 +34,7 @@ export const SubmitButton = () => {
             );
         } catch (error) {
             console.error("Error:", error);
-            alert("Error: Failed to parse pipeline. but inside catch block");
+            alert("Error: Failed to parse pipeline.");
         }
     }
 
