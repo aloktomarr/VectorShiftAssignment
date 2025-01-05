@@ -12,7 +12,6 @@ export const SubmitButton = () => {
         }
 
         try {
-            // Use Replit public URL for backend
             const response = await fetch(
                 "http://localhost:8000/pipelines/parse",
                 {

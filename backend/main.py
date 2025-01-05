@@ -20,24 +20,16 @@ def read_root():
 
 @app.post("/pipelines/parse")
 async def parse_pipeline(request: Request):
-    # Receive raw JSON payload
     body = await request.json()
-
-    # Extract nodes and edges from the payload
     nodes = [node["id"] for node in body.get("nodes", [])]
     edges = [(edge["source"], edge["target"]) for edge in body.get("edges", [])]
-
-    # Create a directed graph
     graph = nx.DiGraph()
     graph.add_nodes_from(nodes)
     graph.add_edges_from(edges)
-
-    # Calculate graph properties
     num_nodes = len(graph.nodes)
     num_edges = len(graph.edges)
     is_dag = nx.is_directed_acyclic_graph(graph)
 
-    # Return the results as JSON
     return JSONResponse({
         "num_nodes": num_nodes,
         "num_edges": num_edges,
